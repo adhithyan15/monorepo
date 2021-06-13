@@ -1,6 +1,6 @@
 {
   "name": "stopwatchy-node",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "A small stopwatch library designed for node",
   "main": "dist/bundle.js",
   "scripts": {
