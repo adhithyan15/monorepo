@@ -2,7 +2,7 @@ const path = require('path');
 
 const serverConfig = {
   target: 'node',
-  entry: './src/node_entry_point.ts',
+  entry: './src/index.ts',
   module: {
     rules: [
       {

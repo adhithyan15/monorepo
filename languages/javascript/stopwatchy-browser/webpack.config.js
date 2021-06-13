@@ -1,7 +1,7 @@
 const path = require('path');
 
 const browserConfig = {
-  entry: './src/browser_entry_point.ts',
+  entry: './src/index.ts',
   module: {
     rules: [
       {
