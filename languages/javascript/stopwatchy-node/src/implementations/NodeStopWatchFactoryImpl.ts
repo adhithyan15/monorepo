@@ -5,6 +5,9 @@ import { TimeStampRetrieverImpl } from "../../../stopwatchy/src/implementations/
 import { PerformanceAPIWrapper } from "../../../stopwatchy/src/interfaces/PerformanceAPIWrapper";
 import { NodePerformanceAPIWrapperImpl } from "./NodePerformanceAPIWrapperImpl";
 import { StopWatchImpl } from "../../../stopwatchy/src/implementations/StopWatchImpl";
+import { StopWatchLogger } from "../../../stopwatchy/src/interfaces/StopWatchLogger";
+import { StopWatchLoggerFactory } from "../../../stopwatchy/src/interfaces/StopWatchLoggerFactory";
+import { StopWatchLoggerFactoryImpl } from "../../../stopwatchy/src/implementations/StopWatchLoggerFactoryImpl";
 
 export class NodeStopWatchFactoryImpl implements StopWatchFactory {
   public createStopWatch(): StopWatch {
@@ -13,6 +16,9 @@ export class NodeStopWatchFactoryImpl implements StopWatchFactory {
     const timeStampRetriever: TimeStampRetriever = new TimeStampRetrieverImpl(
       performanceAPIWrapper
     );
-    return new StopWatchImpl(timeStampRetriever);
+    const stopWatchLoggerFactory: StopWatchLoggerFactory =
+      new StopWatchLoggerFactoryImpl();
+    const logger: StopWatchLogger = stopWatchLoggerFactory.createLogger();
+    return new StopWatchImpl(timeStampRetriever, logger);
   }
 }
