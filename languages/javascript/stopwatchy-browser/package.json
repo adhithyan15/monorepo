@@ -1,6 +1,6 @@
 {
   "name": "stopwatchy-browser",
-  "version": "2.2.0",
+  "version": "3.0.0",
   "description": "A small stopwatch library designed for the browser",
   "main": "dist/bundle.js",
   "scripts": {
