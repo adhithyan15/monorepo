@@ -1,5 +1,6 @@
 import { StructuredLogger } from "./StructuredLogger";
+import { LoggerObserver } from "../../../loggy/src/interfaces/LoggerObserver";
 
 export interface StructuredLoggerFactory {
-  createLogger(): StructuredLogger;
+  createLogger(observers?: LoggerObserver[]): StructuredLogger;
 }
