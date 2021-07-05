@@ -8,8 +8,10 @@ import { StopWatchImpl } from "../../../stopwatchy/src/implementations/StopWatch
 import { StopWatchLogger } from "../../../stopwatchy/src/interfaces/StopWatchLogger";
 import { StopWatchLoggerFactory } from "../../../stopwatchy/src/interfaces/StopWatchLoggerFactory";
 import { StopWatchLoggerFactoryImpl } from "../../../stopwatchy/src/implementations/StopWatchLoggerFactoryImpl";
+import { StructuredLogger } from "../../../structured-logger/src/interfaces/StructuredLogger";
 
 export class BrowserStopWatchFactoryImpl implements StopWatchFactory {
+  constructor(private structuredLogger: StructuredLogger) {}
   public createStopWatch(): StopWatch {
     const performanceAPIWrapper: PerformanceAPIWrapper =
       new BrowserPerformanceAPIWrapperImpl();
@@ -18,7 +20,9 @@ export class BrowserStopWatchFactoryImpl implements StopWatchFactory {
     );
     const stopWatchLoggerFactory: StopWatchLoggerFactory =
       new StopWatchLoggerFactoryImpl();
-    const logger: StopWatchLogger = stopWatchLoggerFactory.createLogger();
+    const logger: StopWatchLogger = stopWatchLoggerFactory.createLogger(
+      this.structuredLogger
+    );
     return new StopWatchImpl(timeStampRetriever, logger);
   }
 }
