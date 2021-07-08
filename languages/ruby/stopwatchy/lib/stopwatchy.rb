@@ -11,7 +11,7 @@ module Stopwatchy
   end
   class StopWatch
     
-    def initialize(monotonically_increasing_clock = false)
+    def initialize(monotonically_increasing_clock = true)
       @start_time_stamp = nil
       @stop_time_stamp = nil
       @monotonically_increasing_clock = monotonically_increasing_clock
