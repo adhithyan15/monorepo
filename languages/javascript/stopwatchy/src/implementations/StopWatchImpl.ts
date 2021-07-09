@@ -23,7 +23,7 @@ export class StopWatchImpl implements StopWatch {
     }
     this.stopTimeStamp = this.timeStampRetriever.getCurrentTimeStamp();
   }
-  public getElapsedTimeInMilliSeconds(): number {
+  public getElapsedTime(): number {
     if (this.startTimeStamp === undefined) {
       this.logger.getElapsedTimeCalledBeforeStart();
       return INVALID_STOP_WATCH_ELAPSED_TIME;

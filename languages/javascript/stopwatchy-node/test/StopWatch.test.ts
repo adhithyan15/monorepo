@@ -15,9 +15,7 @@ test("should return invalid elapsed time if start was never called", () => {
     stopWatchLogger
   );
   stopWatch.stop();
-  expect(stopWatch.getElapsedTimeInMilliSeconds()).toBe(
-    INVALID_STOP_WATCH_ELAPSED_TIME
-  );
+  expect(stopWatch.getElapsedTime()).toBe(INVALID_STOP_WATCH_ELAPSED_TIME);
 });
 
 test("should return invalid elapsed time if stop was never called", () => {
@@ -29,9 +27,7 @@ test("should return invalid elapsed time if stop was never called", () => {
     stopWatchLogger
   );
   stopWatch.start();
-  expect(stopWatch.getElapsedTimeInMilliSeconds()).toBe(
-    INVALID_STOP_WATCH_ELAPSED_TIME
-  );
+  expect(stopWatch.getElapsedTime()).toBe(INVALID_STOP_WATCH_ELAPSED_TIME);
 });
 
 test("should return a valid elapsed time if both start and stop were called", () => {
@@ -44,7 +40,5 @@ test("should return a valid elapsed time if both start and stop were called", ()
   );
   stopWatch.start();
   stopWatch.stop();
-  expect(stopWatch.getElapsedTimeInMilliSeconds()).not.toBe(
-    INVALID_STOP_WATCH_ELAPSED_TIME
-  );
+  expect(stopWatch.getElapsedTime()).not.toBe(INVALID_STOP_WATCH_ELAPSED_TIME);
 });
