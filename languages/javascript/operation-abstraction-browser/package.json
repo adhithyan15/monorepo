@@ -1,6 +1,6 @@
 {
   "name": "operation-abstraction-browser",
-  "version": "0.4.0",
+  "version": "4.0.0",
   "description": "A small operations library",
   "main": "dist/bundle.js",
   "scripts": {
