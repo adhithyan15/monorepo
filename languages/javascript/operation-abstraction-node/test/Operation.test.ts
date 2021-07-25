@@ -1,7 +1,7 @@
 import { getOperationFactory } from "../src/index";
 import { OperationFactory } from "../../operation/src/interfaces/OperationFactory";
 import { Operation } from "../../operation/src/interfaces/Operation";
-import { StructuredLoggerStub } from "../../structured-logger/src/stubs/StructuredLoggerStub";
+import { StructuredLoggerStub } from "../../stubs/StructuredLoggerStub";
 
 test("calling getOperationName should return the name of the operation", () => {
   const operationFactory: OperationFactory = getOperationFactory(

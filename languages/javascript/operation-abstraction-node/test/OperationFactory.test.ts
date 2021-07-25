@@ -1,7 +1,7 @@
 import { getOperationFactory } from "../src/index";
 import { OperationFactory } from "../../operation/src/interfaces/OperationFactory";
 import { OperationImpl } from "../../operation/src/implementations/OperationImpl";
-import { StructuredLoggerStub } from "../../structured-logger/src/stubs/StructuredLoggerStub";
+import { StructuredLoggerStub } from "../../stubs/StructuredLoggerStub";
 
 test("createOperation should return an instance of an operation", () => {
   const operationFactory: OperationFactory = getOperationFactory(

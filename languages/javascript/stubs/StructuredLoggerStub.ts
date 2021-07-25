@@ -1,4 +1,5 @@
-import { StructuredLogger } from "../interfaces/StructuredLogger";
+/* eslint-disable */ 
+import { StructuredLogger } from "../structured-logger/src/interfaces/StructuredLogger";
 
 export class StructuredLoggerStub implements StructuredLogger {
 public logError(_logMessage: string): void {}
