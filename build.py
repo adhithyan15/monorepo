@@ -15,12 +15,8 @@ def osIndependentPathAppend(basePath, pathToAppend):
 def buildJavaScriptProjects():
     print("Starting to build javascript projects\n")
     print("Installing Yarn\n")
-    try:
-        process = subprocess.Popen(['npm', 'install', '-g', 'yarn'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
-        stdout, stderror = process.communicate()
-    except FileNotFoundError:
-        print("Unable to install Yarn. Failing the build\n")
-        sys.exit(2)
+    process = subprocess.Popen(['npm', 'install', '-g', 'yarn'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
+    stdout, stderror = process.communicate()
     project_contents = os.listdir(".")
     base_dir_path = os.getcwd()
     for project in project_contents:
