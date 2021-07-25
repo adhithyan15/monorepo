@@ -38,6 +38,9 @@ def buildJavaScriptProjects():
                 stdout, stderror = process.communicate()
                 if "npm ERR" in stderror:
                     print("Build failed")
+                    print(stdout)
+                    print(stderror)
+                    sys.exit(2);
                 else:
                     print("Build succeeded")
             else:
