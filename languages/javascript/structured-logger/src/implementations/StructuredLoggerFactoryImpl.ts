@@ -12,7 +12,7 @@ export class StructuredLoggerFactoryImpl implements StructuredLoggerFactory {
     if (observers != null) {
       observers.forEach((observer: LoggerObserver) => {
         logger.subscribe(observer);
-      })
+      });
     }
     return new StructuredLoggerImpl(logger);
   }

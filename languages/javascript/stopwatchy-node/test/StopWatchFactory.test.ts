@@ -2,7 +2,7 @@ import { StopWatchFactory } from "../../stopwatchy/src/interfaces/StopWatchFacto
 import { NodeStopWatchFactoryImpl } from "../src/implementations/NodeStopWatchFactoryImpl";
 import { StopWatch } from "../../stopwatchy/src/interfaces/StopWatch";
 import { StopWatchImpl } from "../../stopwatchy/src//implementations/StopWatchImpl";
-import { StructuredLoggerStub } from "../../structured-logger/src/stubs/StructuredLoggerStub";
+import { StructuredLoggerStub } from "../../stubs/StructuredLoggerStub";
 
 test("should produce an instance of StopWatchImpl", () => {
   const stopWatchFactory: StopWatchFactory = new NodeStopWatchFactoryImpl(
