@@ -65,6 +65,7 @@ def build_ruby_projects()
                 puts "Gemfile file found. Confirmed that it is a valid gem package"
                 puts "Installing all dependencies\n"
                 puts "\n"
+                system("gem install bundler")
                 system("bundle")
                 puts "\n"
                 puts "Attemping to build and test " + package_directory + " gem"
