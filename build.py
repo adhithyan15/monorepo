@@ -29,7 +29,8 @@ def buildJavaScriptProjects():
                     packageJsonFound = True
             if packageJsonFound:
                 print("Installing all dependencies\n")
-                process = subprocess.Popen(['yarn', 'install'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True, shell=True)
+                useShell = platform.system() == "Windows"
+                process = subprocess.Popen(['yarn', 'install'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True, shell=useShell)
                 stdout, stderror = process.communicate()
                 if "npm ERR" in stderror:
                     print("Unable to install all the dependencies")
@@ -39,7 +40,7 @@ def buildJavaScriptProjects():
                 else:
                     print("All the dependencies were installed\n")
                 print("Building and running tests on the project\n")
-                process = subprocess.Popen(['yarn', 'bundle'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True, shell=True)
+                process = subprocess.Popen(['yarn', 'bundle'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True, shell=useShell)
                 stdout, stderror = process.communicate()
                 if "npm ERR" in stderror:
                     print("Build failed")
