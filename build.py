@@ -27,7 +27,7 @@ def buildJavaScriptProjects():
                 if content == "package.json":
                     packageJsonFound = True
             if packageJsonFound:
-                process = subprocess.Popen(['yarn', 'bundle'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=False=True)
+                process = subprocess.Popen(['yarn', 'bundle'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
                 stdout, stderror = process.communicate()
                 if "npm ERR" in stderror:
                     print("Build failed")
