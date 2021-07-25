@@ -1,6 +1,6 @@
 import { getStopWatchFactory } from "../src/index";
 import { NodeStopWatchFactoryImpl } from "../src/implementations/NodeStopWatchFactoryImpl";
-import { StructuredLoggerStub } from "../../structured-logger/src/stubs/StructuredLoggerStub";
+import { StructuredLoggerStub } from "../../stubs/StructuredLoggerStub";
 
 test("should produce an instance of StopWatchFactoryImpl", () => {
   const structuredLoggerStub: StructuredLoggerStub = new StructuredLoggerStub();
