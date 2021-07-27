@@ -7,7 +7,7 @@ import { StopWatch } from "../../../stopwatchy/src/interfaces/StopWatch";
 
 export class OperationFactoryImpl implements OperationFactory {
     constructor(private stopWatchFactory: StopWatchFactory, private structuredLogger: StructuredLogger) {}
-    public createOperation<OperationReturnType>(operationName: string, callbackFunction: () => OperationReturnType): Operation<OperationReturnType> {
+    public createOperation<OperationReturnType>(operationName: string, callbackFunction: (operation: Operation<OperationReturnType>) => OperationReturnType): Operation<OperationReturnType> {
         const stopWatch: StopWatch = this.stopWatchFactory.createStopWatch();
         return new OperationImpl<OperationReturnType>(operationName, callbackFunction, stopWatch, this.structuredLogger);
     }

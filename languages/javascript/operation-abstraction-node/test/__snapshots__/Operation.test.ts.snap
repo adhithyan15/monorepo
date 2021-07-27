@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`calling addProperty from the operation callback should result in the property being added to propertybag 1`] = `
+Object {
+  "customLogs": Array [],
+  "debugLogs": Array [],
+  "errorLogs": Array [],
+  "infoLogs": Array [
+    "{\\"operationName\\":\\"TestAddPropertyOperation\\",\\"elapsedTime\\":10,\\"propertyBag\\":{\\"TestKey\\":\\"TestValue\\"}}",
+  ],
+  "sillyLogs": Array [],
+  "verboseLogs": Array [],
+  "warningLogs": Array [],
+}
+`;
