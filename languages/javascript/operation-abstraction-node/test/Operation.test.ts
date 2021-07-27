@@ -49,7 +49,10 @@ test("calling getResult should return undefined for a void callback function", (
 test("calling addProperty from the operation callback should result in the property being added to propertybag", () => {
   const logger: StructuredLoggerSpy = new StructuredLoggerSpy();
   const stopWatchFactory: StopWatchFactory = new StopWatchFactoryStub();
-  const operationFactory: OperationFactory = new OperationFactoryImpl(stopWatchFactory, logger);
+  const operationFactory: OperationFactory = new OperationFactoryImpl(
+    stopWatchFactory,
+    logger
+  );
   const operationName = "TestAddPropertyOperation";
   const callbackFunction: (operation: Operation<void>) => void = (
     operation: Operation<void>
