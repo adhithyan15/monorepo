@@ -1,3 +1,5 @@
+require 'fileutils'
+
 def build_javascript_projects()
     puts "\n"
     puts "Building and testing JavaScript projects"
@@ -28,6 +30,8 @@ def build_javascript_projects()
                     exit(false)
                 end
                 puts "\n"
+                puts "Deleting the existing dist folder if it exists\n"
+                FileUtils.rm_rf(Dir.pwd + "/dist")
                 puts "Attemping to build and test " + package_directory + " package"
                 puts "\n"
                 unless system("yarn bundle")
