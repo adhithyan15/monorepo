@@ -6,7 +6,7 @@ Object {
   "debugLogs": Array [],
   "errorLogs": Array [],
   "infoLogs": Array [
-    "{\\"operationName\\":\\"TestAddPropertyOperation\\",\\"elapsedTime\\":0.052977561950683594,\\"propertyBag\\":{\\"TestKey\\":\\"TestValue\\"}}",
+    "{\\"operationName\\":\\"TestAddPropertyOperation\\",\\"elapsedTime\\":10,\\"propertyBag\\":{\\"TestKey\\":\\"TestValue\\"}}",
   ],
   "sillyLogs": Array [],
   "verboseLogs": Array [],

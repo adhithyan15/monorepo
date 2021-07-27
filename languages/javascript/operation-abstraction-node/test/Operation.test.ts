@@ -3,6 +3,9 @@ import { OperationFactory } from "../../operation/src/interfaces/OperationFactor
 import { Operation } from "../../operation/src/interfaces/Operation";
 import { StructuredLoggerStub } from "../../stubs/StructuredLoggerStub";
 import { StructuredLoggerSpy } from "../../spies/StructuredLoggerSpy";
+import { StopWatchFactory } from "../../stopwatchy/src/interfaces/StopWatchFactory";
+import { StopWatchFactoryStub } from "../../stubs/StopWatchFactoryStub";
+import { OperationFactoryImpl } from "../../operation/src/implementations/OperationFactoryImpl";
 
 test("calling getOperationName should return the name of the operation", () => {
   const operationFactory: OperationFactory = getOperationFactory(
@@ -45,7 +48,8 @@ test("calling getResult should return undefined for a void callback function", (
 
 test("calling addProperty from the operation callback should result in the property being added to propertybag", () => {
   const logger: StructuredLoggerSpy = new StructuredLoggerSpy();
-  const operationFactory: OperationFactory = getOperationFactory(logger);
+  const stopWatchFactory: StopWatchFactory = new StopWatchFactoryStub();
+  const operationFactory: OperationFactory = new OperationFactoryImpl(stopWatchFactory, logger);
   const operationName = "TestAddPropertyOperation";
   const callbackFunction: (operation: Operation<void>) => void = (
     operation: Operation<void>
