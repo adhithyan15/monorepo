@@ -6,7 +6,21 @@ Object {
   "debugLogs": Array [],
   "errorLogs": Array [],
   "infoLogs": Array [
-    "{\\"operationName\\":\\"TestAddPropertyOperation\\",\\"elapsedTime\\":10,\\"propertyBag\\":{\\"TestKey\\":\\"TestValue\\"}}",
+    "{\\"operationName\\":\\"TestAddPropertyOperation\\",\\"elapsedTime\\":10,\\"didOperationSucceed\\":true,\\"encounteredException\\":false,\\"propertyBag\\":{\\"TestKey\\":\\"TestValue\\"}}",
+  ],
+  "sillyLogs": Array [],
+  "verboseLogs": Array [],
+  "warningLogs": Array [],
+}
+`;
+
+exports[`operation should return the fallback result if an exception was encountered and the exception should be logged out 1`] = `
+Object {
+  "customLogs": Array [],
+  "debugLogs": Array [],
+  "errorLogs": Array [],
+  "infoLogs": Array [
+    "{\\"operationName\\":\\"TestAddPropertyOperation\\",\\"elapsedTime\\":10,\\"didOperationSucceed\\":false,\\"encounteredException\\":true,\\"exceptionInfo\\":{},\\"propertyBag\\":{}}",
   ],
   "sillyLogs": Array [],
   "verboseLogs": Array [],

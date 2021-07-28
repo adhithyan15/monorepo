@@ -9,6 +9,7 @@ export class OperationImpl<OperationReturnType> implements Operation<OperationRe
     private operationName: string,
     private callbackFunction: (operation: Operation<OperationReturnType>) => OperationReturnType,
     private stopWatch: StopWatch,
+    private fallbackResult: OperationReturnType,
     private logger: StructuredLogger
   ) {
     this.propertyBag = {};
@@ -17,13 +18,26 @@ export class OperationImpl<OperationReturnType> implements Operation<OperationRe
     return this.operationName;
   }
   public getResult(): OperationReturnType {
+    let didOperationSucceed: boolean = true;
+    let encounteredException: boolean = false;
+    let exceptionInfo: any = undefined;
+    let resultToReturn: OperationReturnType = this.fallbackResult;
     this.stopWatch.start();
-    const resultToReturn: OperationReturnType = this.callbackFunction(this);
+    try {
+      resultToReturn = this.callbackFunction(this);
+    } catch (exception) {
+      didOperationSucceed = false;
+      encounteredException = true;
+      exceptionInfo = exception;
+    }
     this.stopWatch.stop();
     const elapsedTime: number = this.stopWatch.getElapsedTime();
     const operationLog: OperationLog = {
       operationName: this.operationName,
       elapsedTime: elapsedTime,
+      didOperationSucceed,
+      encounteredException,
+      exceptionInfo,
       propertyBag: this.propertyBag
     };
     this.logger.logInfo(JSON.stringify(operationLog));
