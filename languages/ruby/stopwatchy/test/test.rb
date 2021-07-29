@@ -1,5 +1,5 @@
 # typed: ignore
-require_relative "../lib/Stopwatchy"
+require_relative "../lib/stopwatchy"
 require "test/unit"
 
 class StopWatchTest < Test::Unit::TestCase
@@ -28,13 +28,15 @@ class StopWatchTest < Test::Unit::TestCase
     def test_get_elapsed_time()
         stopwatch = Stopwatchy::StopWatch.new
         stopwatch.start()
+        sleep(1)
         stopwatch.stop()
         assert(stopwatch.get_elapsed_time() > 0, "Elapsed time must be greater than zero")
     end
 
-    def test_get_elapsed_time_monotonically_increasing()
-        stopwatch = Stopwatchy::StopWatch.new(true)
+    def test_get_elapsed_time_non_monotonically_increasing()
+        stopwatch = Stopwatchy::StopWatch.new(false)
         stopwatch.start()
+        sleep(1)
         stopwatch.stop()
         assert(stopwatch.get_elapsed_time() > 0, "Elapsed time must be greater than zero")
     end

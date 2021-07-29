@@ -118,7 +118,7 @@ languages_directory_contents.each do |language_directory|
     if language_directory == "javascript"
         build_javascript_projects()
     elsif language_directory == "ruby"
-        # build_ruby_projects()
+        build_ruby_projects()
     end
     Dir.chdir(languages_directory_path)
 end
