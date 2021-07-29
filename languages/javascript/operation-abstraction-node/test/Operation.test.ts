@@ -6,13 +6,23 @@ import { StructuredLoggerSpy } from "../../spies/StructuredLoggerSpy";
 import { StopWatchFactory } from "../../stopwatchy/src/interfaces/StopWatchFactory";
 import { StopWatchFactoryStub } from "../../stubs/StopWatchFactoryStub";
 import { OperationFactoryImpl } from "../../operation/src/implementations/OperationFactoryImpl";
+import { OperationResultFactory } from "../../operation/src/interfaces/OperationResultFactory";
 
 test("calling getOperationName should return the name of the operation", () => {
   const operationFactory: OperationFactory = getOperationFactory(
     new StructuredLoggerStub()
   );
   const operationName = "HelloWorldOperation";
-  const callbackFunction: () => void = () => console.log("Hello world!!");
+  const callbackFunction = (
+    operation: Operation<void>,
+    operationResultFactory: OperationResultFactory
+  ) => {
+    console.log("Hello World!!");
+    return operationResultFactory.generateOperationResult<void>({
+      didOperationSucceed: true,
+      returnValue: undefined,
+    });
+  };
   const fallbackResult: void = undefined;
   const operation: Operation<void> = operationFactory.createOperation(
     operationName,
@@ -27,14 +37,23 @@ test("calling getResult should return the output of the callback function", () =
     new StructuredLoggerStub()
   );
   const operationName = "SumOperation";
-  const callbackFunction: () => number = () => 2 + 2;
+  const expectedOutputValue = 4;
+  const callbackFunction = (
+    operation: Operation<number>,
+    operationResultFactory: OperationResultFactory
+  ) => {
+    return operationResultFactory.generateOperationResult<number>({
+      didOperationSucceed: true,
+      returnValue: expectedOutputValue,
+    });
+  };
   const fallbackResult = 0;
   const operation: Operation<void> = operationFactory.createOperation(
     operationName,
     callbackFunction,
     fallbackResult
   );
-  expect(operation.getResult()).toEqual(callbackFunction());
+  expect(operation.getResult()).toEqual(expectedOutputValue);
 });
 
 test("calling getResult should return undefined for a void callback function", () => {
@@ -42,7 +61,15 @@ test("calling getResult should return undefined for a void callback function", (
     new StructuredLoggerStub()
   );
   const operationName = "HelloWorldOperation";
-  const callbackFunction: () => void = () => console.log("Hello World");
+  const callbackFunction = (
+    operation: Operation<void>,
+    operationResultFactory: OperationResultFactory
+  ) => {
+    return operationResultFactory.generateOperationResult<void>({
+      didOperationSucceed: true,
+      returnValue: undefined,
+    });
+  };
   const fallbackResult: void = undefined;
   const operation: Operation<void> = operationFactory.createOperation(
     operationName,
@@ -60,10 +87,15 @@ test("calling addProperty from the operation callback should result in the prope
     logger
   );
   const operationName = "TestAddPropertyOperation";
-  const callbackFunction: (operation: Operation<void>) => void = (
-    operation: Operation<void>
+  const callbackFunction = (
+    operation: Operation<void>,
+    operationResultFactory: OperationResultFactory
   ) => {
     operation.addProperty("TestKey", "TestValue");
+    return operationResultFactory.generateOperationResult<void>({
+      didOperationSucceed: true,
+      returnValue: undefined,
+    });
   };
   const fallbackResult: void = undefined;
   const operation: Operation<void> = operationFactory.createOperation(
@@ -83,8 +115,9 @@ test("operation should return the fallback result if an exception was encountere
     logger
   );
   const operationName = "TestAddPropertyOperation";
-  const callbackFunction: (operation: Operation<number>) => number = (
-    operation: Operation<number>
+  const callbackFunction = (
+    operation: Operation<number>,
+    operationResultFactory: OperationResultFactory
   ) => {
     throw new Error("Throwing an exception");
   };

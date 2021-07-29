@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should return an instance of OperationResult of certain type 1`] = `
+Object {
+  "didOperationFailUnexpectedly": false,
+  "didOperationSucceed": true,
+  "returnValue": 5,
+}
+`;
+
+exports[`should return an instance of OperationResult with didOperationFailUnexpectedly if that field was set 1`] = `
+Object {
+  "didOperationFailUnexpectedly": true,
+  "didOperationSucceed": true,
+  "returnValue": 5,
+}
+`;

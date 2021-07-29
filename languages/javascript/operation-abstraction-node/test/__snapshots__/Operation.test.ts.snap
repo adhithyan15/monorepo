@@ -6,7 +6,7 @@ Object {
   "debugLogs": Array [],
   "errorLogs": Array [],
   "infoLogs": Array [
-    "{\\"operationName\\":\\"TestAddPropertyOperation\\",\\"elapsedTime\\":10,\\"didOperationSucceed\\":true,\\"encounteredException\\":false,\\"propertyBag\\":{\\"TestKey\\":\\"TestValue\\"}}",
+    "{\\"operationName\\":\\"TestAddPropertyOperation\\",\\"elapsedTime\\":10,\\"didOperationSucceed\\":true,\\"didOperationFailUnexpectedly\\":false,\\"encounteredException\\":false,\\"propertyBag\\":{\\"TestKey\\":\\"TestValue\\"}}",
   ],
   "sillyLogs": Array [],
   "verboseLogs": Array [],
@@ -20,7 +20,7 @@ Object {
   "debugLogs": Array [],
   "errorLogs": Array [],
   "infoLogs": Array [
-    "{\\"operationName\\":\\"TestAddPropertyOperation\\",\\"elapsedTime\\":10,\\"didOperationSucceed\\":false,\\"encounteredException\\":true,\\"exceptionInfo\\":{},\\"propertyBag\\":{}}",
+    "{\\"operationName\\":\\"TestAddPropertyOperation\\",\\"elapsedTime\\":10,\\"didOperationSucceed\\":false,\\"didOperationFailUnexpectedly\\":false,\\"encounteredException\\":true,\\"exceptionInfo\\":{},\\"propertyBag\\":{}}",
   ],
   "sillyLogs": Array [],
   "verboseLogs": Array [],
