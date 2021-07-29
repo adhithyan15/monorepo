@@ -1,5 +1,5 @@
 # typed: ignore
-require_relative "../lib/Stopwatchy"
+require_relative "../lib/stopwatchy"
 require "test/unit"
 
 class StopWatchTest < Test::Unit::TestCase
