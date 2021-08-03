@@ -20,7 +20,7 @@ const serverConfig = {
     path: path.resolve(__dirname, 'dist'),
     library: {
         name: "stopwatchy",
-        type: "umd"
+        type: "commonjs"
     }
   },
   mode: "production"

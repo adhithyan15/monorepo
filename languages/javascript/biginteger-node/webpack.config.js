@@ -1,6 +1,7 @@
 const path = require('path');
 
-const browserConfig = {
+const serverConfig = {
+  target: 'node',
   entry: './src/index.ts',
   module: {
     rules: [
@@ -17,8 +18,12 @@ const browserConfig = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    library: {
+        name: "biginteger",
+        type: "commonjs"
+    }
   },
   mode: "production"
-};
+}
 
-module.exports = [browserConfig];
+module.exports = [serverConfig];
