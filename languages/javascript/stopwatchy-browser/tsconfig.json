@@ -5,7 +5,7 @@
     "strictNullChecks": true,
     "allowJs": false,
     "module": "es6",
-    "target": "ES5",
+    "target": "ES3",
     "incremental": true,
     "sourceMap": true,
     "noImplicitThis": true,

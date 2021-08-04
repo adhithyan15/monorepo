@@ -4,13 +4,13 @@
     "noImplicitAny": true,
     "strictNullChecks": true,
     "allowJs": false,
-    "module": "es6",
-    "target": "ES5",
+    "module": "CommonJS",
     "incremental": true,
     "sourceMap": true,
     "noImplicitThis": true,
     "strict": true,
     "declaration": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true
   }
 }
