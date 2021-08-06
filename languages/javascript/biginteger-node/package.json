@@ -1,6 +1,6 @@
 {
   "name": "biginteger-node",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A small big integer library designed for Node.js",
   "main": "dist/bundle.js",
   "scripts": {
