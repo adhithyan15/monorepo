@@ -90,6 +90,46 @@ def build_ruby_projects()
     end
 end
 
+def build_csharp_projects()
+    puts "Building and testing C# projects"
+    puts "Building and testing Ruby projects"
+    current_directory_path = Dir.pwd
+    Dir.chdir(current_directory_path + "/csharp")
+    current_directory_path = Dir.pwd
+    current_directory_contents = Dir.entries(".")
+    current_directory_contents.each do |package_directory|
+        package_directory_path = current_directory_path + "/" + package_directory
+        if File.directory?(package_directory_path)
+            Dir.chdir(package_directory_path)
+            # Check if *.sln file exists on the folder. If not, skip
+            package_directory_contents = Dir.entries(".")
+            puts "\n"
+            puts "Checking if " + package_directory + " is a valid csharp project"
+            sln_file_found = package_directory_contents.include?(package_directory + ".sln")
+            if sln_file_found
+                puts "Found a sln file. Attempting to build the project"
+                puts "\n"
+                unless system("dotnet build")
+                    puts "Build failed. Aborting"
+                    exit(false)
+                end
+                puts "\n"
+                puts "Build succeeded. Attempting to test the project"
+                puts "\n"
+                unless system("dotnet test")
+                    puts "Tests failed. Aborting"
+                    exit(false)
+                end
+                puts "\n"
+                puts "Successfully built and tested the package"
+                puts "\n"
+            else
+                puts "Didn't find a sln. Not a valid csharp package. Skipping"
+            end
+        end
+    end
+end
+
 puts "Starting build"
 current_directory_contents = Dir.entries(".")
 current_directory_path = Dir.pwd()
@@ -119,6 +159,8 @@ languages_directory_contents.each do |language_directory|
         build_javascript_projects()
     elsif language_directory == "ruby"
         build_ruby_projects()
+    elsif language_directory == "csharp"
+        build_csharp_projects();
     end
     Dir.chdir(languages_directory_path)
 end
