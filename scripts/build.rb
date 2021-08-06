@@ -1,4 +1,5 @@
 require 'fileutils'
+require 'digest'
 
 def build_javascript_projects()
     puts "\n"
@@ -38,7 +39,18 @@ def build_javascript_projects()
                     puts "Build or test failed. Stopping the build"
                     exit(false)
                 end
-                puts "Successfully built and tested the package. Moving on to the next package"
+                puts "Successfully built and tested the package"
+                puts "\n"
+                puts "Generating a SHA hash to check if the package needs to be pushed to NPM"
+                puts "\n"
+                package_hash = Digest::SHA2.hexdigest(File.read("dist/bundle.js"))
+                stored_hash = File.read("last_published_package_sha.txt")
+                if package_hash == stored_hash
+                    puts "The stored hash and generated hash matches. No need for package update"
+                else
+                    puts "The generated hash doesn't match the hash of the last published package. Aborting"
+                    exit(false)
+                end
                 puts "\n"
             else
                 puts "package.json not found. It is not a valid package. Skipping"
