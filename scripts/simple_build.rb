@@ -49,6 +49,7 @@ def process_build_file(build_directory_path)
             build_file_contents = File.read(build_file_path).split("\n")
             build_file_contents.each do |build_command|
                 unless system(build_command)
+                    puts build_command
                     puts "Build failed. Aborting"
                     exit(false)
                 end
