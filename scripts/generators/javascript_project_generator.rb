@@ -378,7 +378,7 @@ puts "The package name is available on npm"
 puts "\n"
 
 root_directory_path = Dir.pwd
-languages_directory_path = root_directory_path + "/" + "languages"
+languages_directory_path = root_directory_path + "/" + "packages"
 
 unless File.directory?(languages_directory_path)
     puts "Expected to find the language directory inside the root folder. But didn't find it. Aborting"
