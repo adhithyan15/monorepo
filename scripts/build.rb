@@ -150,8 +150,8 @@ languages_directory_path = ""
 current_directory_contents.each do |content|
     content_path = current_directory_path + "/" + content
     if File.directory?(content_path)
-        if content == "languages"
-            puts "Found languages directory"
+        if content == "packages"
+            puts "Found packages directory"
             languages_directory_found = true
             languages_directory_path = content_path
         end
@@ -159,7 +159,7 @@ current_directory_contents.each do |content|
 end
 
 unless languages_directory_found
-    puts "No languages directory found. Exiting with an error"
+    puts "No packages directory found. Exiting with an error"
     exit(false)
 end
 
