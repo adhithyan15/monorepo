@@ -38,20 +38,26 @@ def process_build_file(build_directory_path)
     darwin_build_file_found = File.exist?(darwin_build_file_path)
     build_file_path = ""
     if RUBY_PLATFORM =~ /darwin/
-        build_file_path = cross_plaform_build_file_found ? cross_platform_build_file_path : darwin_build_file_path
+        build_file_path = cross_plaform_build_file_found ? cross_platform_build_file_path : darwin_build_file_found ? darwin_build_file_path : ""
     elsif RUBY_PLATFORM =~ /linux/
-        build_file_path = cross_plaform_build_file_found ? cross_platform_build_file_path : linux_build_file_path
+        build_file_path = cross_plaform_build_file_found ? cross_platform_build_file_path : linux_build_file_found ? linux_build_file_path : ""
     elsif RUBY_PLATFORM =~ /win/
-        build_file_path = cross_plaform_build_file_found ? cross_platform_build_file_path : windows_build_file_path
+        build_file_path = cross_plaform_build_file_found ? cross_platform_build_file_path : windows_build_file_found ? windows_build_file_path : ""
     end
-    build_file_contents = File.read(build_file_path).split("\n")
-    build_file_contents.each do |build_command|
-        unless system(build_command)
-            puts "Build failed. Aborting"
-            exit(false)
+    begin
+        unless build_file_path == ""
+            build_file_contents = File.read(build_file_path).split("\n")
+            build_file_contents.each do |build_command|
+                unless system(build_command)
+                    puts "Build failed. Aborting"
+                    exit(false)
+                end
+            end
+            puts "Build succeeded"
         end
+    rescue
+        puts "Build failed for build file " + build_file_path
     end
-    puts "Build succeeded"
 end
 
 puts "Looking for a WORKSPACE or a build.rb file to start the build"
