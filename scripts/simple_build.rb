@@ -44,6 +44,7 @@ def process_build_file(build_directory_path)
     elsif RUBY_PLATFORM =~ /win/
         build_file_path = cross_plaform_build_file_found ? cross_platform_build_file_path : windows_build_file_path
     end
+    puts build_file_path
     build_file_contents = File.read(build_file_path).split("\n")
     build_file_contents.each do |build_command|
         unless system(build_command)
