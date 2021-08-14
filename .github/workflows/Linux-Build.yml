@@ -18,3 +18,5 @@ jobs:
         run: sudo apt-get install gfortran
       - name: Running build
         run: ruby scripts/build.rb
+      - name: Simplified build
+        run: ruby scripts/simple_build.rb

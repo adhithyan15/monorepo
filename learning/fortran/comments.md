@@ -1,28 +1,22 @@
 # Comments
 
+*This only applies to Fortran 90 and above*
+
 Comments are how most programmers document code.
 
-To add a comment, you need to add one of the following characters in the first column - `c`, `C`, or `*`.
+To add a comment, you need to use the `!` (exclamation mark). Anything you write after the `!` will be ignored by the compiler as a comment
 
-Here are some examples
+Here are two examples
 
 ```fortran
-c This is a hello world program
+! This is a hello world program
 program hello_world
     print *, "Hello World!!!"
 end program hello_world
 ```
 
 ```fortran
-C This is a hello world program
 program hello_world
-    print *, "Hello World!!!"
-end program hello_world
-```
-
-```fortran
-* This is a hello world program
-program hello_world
-    print *, "Hello World!!!"
+    print *, "Hello World!!!" ! This is a hello world program
 end program hello_world
 ```

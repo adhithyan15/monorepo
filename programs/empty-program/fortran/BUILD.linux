@@ -1,0 +1,2 @@
+gfortran --version
+gfortran program.f90 -o program
