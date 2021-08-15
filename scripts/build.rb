@@ -32,6 +32,7 @@ def process_build_file(build_directory_path)
     cross_plaform_build_file_found = File.exist?(cross_platform_build_file_path)
     puts cross_platform_build_file_path
     puts cross_plaform_build_file_found
+    puts RUBY_PLATFORM
     windows_build_file_path = build_directory_path + "/BUILD.win"
     windows_build_file_found = File.exist?(windows_build_file_path)
     linux_build_file_path = build_directory_path + "/BUILD.linux"
