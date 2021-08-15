@@ -41,7 +41,7 @@ def process_build_file(build_directory_path)
         build_file_path = cross_plaform_build_file_found ? cross_platform_build_file_path : darwin_build_file_found ? darwin_build_file_path : ""
     elsif RUBY_PLATFORM =~ /linux/
         build_file_path = cross_plaform_build_file_found ? cross_platform_build_file_path : linux_build_file_found ? linux_build_file_path : ""
-    elsif RUBY_PLATFORM =~ /win/
+    elsif RUBY_PLATFORM =~ /w32/
         build_file_path = cross_plaform_build_file_found ? cross_platform_build_file_path : windows_build_file_found ? windows_build_file_path : ""
     end
     begin
