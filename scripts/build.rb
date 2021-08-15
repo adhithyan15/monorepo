@@ -30,6 +30,8 @@ def process_build_file(build_directory_path)
     puts "Processing BUILD file in " + build_directory_path
     cross_platform_build_file_path = build_directory_path + "/BUILD"
     cross_plaform_build_file_found = File.exist?(cross_platform_build_file_path)
+    puts cross_platform_build_file_path
+    puts cross_plaform_build_file_found
     windows_build_file_path = build_directory_path + "/BUILD.win"
     windows_build_file_found = File.exist?(windows_build_file_path)
     linux_build_file_path = build_directory_path + "/BUILD.linux"
