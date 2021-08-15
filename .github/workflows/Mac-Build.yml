@@ -16,5 +16,7 @@ jobs:
       - run: npm install -g yarn
       - name: Install GCC along with GNU Fortran
         run: brew install gcc
+      - name: Install Perl if it doesn't exit
+        run: brew install perl
       - name: Running build
         run: ruby scripts/build.rb
