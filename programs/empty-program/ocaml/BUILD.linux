@@ -1,0 +1,3 @@
+ocamlc -c program.ml
+ocamlc -o program program.cmo
+./program
