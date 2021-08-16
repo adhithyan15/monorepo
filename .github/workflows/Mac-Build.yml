@@ -18,5 +18,9 @@ jobs:
         run: brew install gcc
       - name: Install Perl if it doesn't exit
         run: brew install perl
+      - name: Install OCaml
+        run: brew install ocaml
+      - name: Install Opam
+        run: brew install opam
       - name: Running build
         run: ruby scripts/build.rb
