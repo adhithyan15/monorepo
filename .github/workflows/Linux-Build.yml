@@ -17,6 +17,6 @@ jobs:
       - name: Install GNU Fortran
         run: sudo apt-get install gfortran
       - name: Install OCaml
-        run: apt-get install ocaml
+        run: sudo apt-get install ocaml
       - name: Running build
         run: ruby scripts/build.rb
