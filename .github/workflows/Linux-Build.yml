@@ -18,5 +18,7 @@ jobs:
         run: sudo apt-get install gfortran
       - name: Install OCaml
         run: sudo apt-get install ocaml
+      - name: Install Haskell
+        run: sudo apt-get install haskell-platform
       - name: Running build
         run: ruby scripts/build.rb
