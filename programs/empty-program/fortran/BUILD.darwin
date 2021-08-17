@@ -1,0 +1,2 @@
+gfortran-11 program.f90 -o program
+./program
