@@ -19,6 +19,6 @@ jobs:
       - name: Install Snap
         run: sudo apt install snapd
       - name: Install Zig
-        run: sudo snap install --beta zig
+        run: sudo snap install --beta --classic zig
       - name: Running build
         run: ruby scripts/build.rb
