@@ -16,5 +16,7 @@ jobs:
       - run: npm install -g yarn
       - name: Install Zig
         run: choco install zig
+      - name: Install Dart
+        run: choco install dart-sdk
       - name: Running build
         run: ruby scripts\build.rb
