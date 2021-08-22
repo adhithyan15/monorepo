@@ -20,5 +20,7 @@ jobs:
         run: sudo apt install snapd
       - name: Install Zig
         run: sudo snap install --beta --classic zig
+      - name: Install Nim
+        run: sudo apt-get install nim
       - name: Running build
         run: ruby scripts/build.rb
