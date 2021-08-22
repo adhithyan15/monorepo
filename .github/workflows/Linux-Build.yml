@@ -24,5 +24,17 @@ jobs:
         run: sudo apt-get install nim
       - name: Install Ada
         run: sudo apt-get install gnat
+      - name: Install Swift Dependencies
+        run: sudo apt-get install binutils git gnupg2 libc6-dev libcurl4 libedit2 libgcc-9-dev libpython2.7 libsqlite3-0 libstdc++-9-dev libxml2 libz3-dev pkg-config tzdata zlib1g-dev
+      - name: Import Swift Keys
+        run: wget -q -O - https://swift.org/keys/all-keys.asc | gpg --import
+      - name: Refresh Swift Keys if they are old
+        run: gpg --keyserver hkp://pool.sks-keyservers.net --refresh-keys Swift
+      - name: Verify Swift package
+        run: gpg --verify swift-5.4.2-RELEASE-ubuntu20.04.tar.gz.sig
+      - name: Extract the Swift Archives
+        run: tar xzf swift-5.4.2-RELEASE-ubuntu20.04.tar.gz
+      - name: Export Swift To Path
+        run: export PATH=/path/to/usr/bin:"${PATH}"
       - name: Running build
         run: ruby scripts/build.rb
