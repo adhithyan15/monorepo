@@ -23,6 +23,6 @@ jobs:
       - name: Install Nim
         run: sudo apt-get install nim
       - name: Install Ada
-        run: sudo aptitude install gnat
+        run: sudo apt-get install gnat
       - name: Running build
         run: ruby scripts/build.rb
