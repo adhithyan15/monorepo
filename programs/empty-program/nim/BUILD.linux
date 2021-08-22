@@ -1,0 +1,4 @@
+nim compile program.nim
+./program
+nim js -d:nodejs -r program.nim
+node program.js
