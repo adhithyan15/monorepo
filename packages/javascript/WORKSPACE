@@ -10,3 +10,5 @@ stopwatchy-browser
 stopwatchy-node
 structured-logger-browser
 structured-logger-node
+typed-dynamic-array-browser
+typed-dynamic-array-node
