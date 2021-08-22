@@ -1,7 +1,7 @@
 ada
 c
 c++
-ååfortran
+fortran
 go
 haskell
 nim
@@ -13,4 +13,5 @@ php
 python
 ruby
 rust
+swift
 zig

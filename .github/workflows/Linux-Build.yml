@@ -24,5 +24,13 @@ jobs:
         run: sudo apt-get install nim
       - name: Install Ada
         run: sudo apt-get install gnat
+      - name: Install Swift Dependencies
+        run: sudo apt-get install binutils git gnupg2 libc6-dev libcurl4 libedit2 libgcc-9-dev libpython2.7 libsqlite3-0 libstdc++-9-dev libxml2 libz3-dev pkg-config tzdata zlib1g-dev
+      - name: Download Swift
+        run: wget https://swift.org/builds/development/ubuntu2004/swift-DEVELOPMENT-SNAPSHOT-2021-08-17-a/swift-DEVELOPMENT-SNAPSHOT-2021-08-17-a-ubuntu20.04.tar.gz
+      - name: Extract the Swift Archives
+        run: tar xzf swift-DEVELOPMENT-SNAPSHOT-2021-08-17-a-ubuntu20.04.tar.gz
+      - name: Export Swift To Path
+        run: export PATH=/path/to/usr/bin:"${PATH}"
       - name: Running build
         run: ruby scripts/build.rb
