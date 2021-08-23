@@ -36,5 +36,13 @@ jobs:
         run: sudo apt-get install erlang
       - name: Install Lua
         run: sudo apt-get install lua5.3
+      - name: Add D GPG Keys
+        run: sudo wget https://netcologne.dl.sourceforge.net/project/d-apt/files/d-apt.list -O /etc/apt/sources.list.d/d-apt.list
+      - name: Update Apt-Get
+        run: sudo apt-get update --allow-insecure-repositories
+      - name: Install D Key Ring
+        run: sudo apt-get -y --allow-unauthenticated install --reinstall d-apt-keyring
+      - name: Install D and Dub
+        run: sudo apt-get update && sudo apt-get install dmd-compiler dub
       - name: Running build
         run: ruby scripts/build.rb
