@@ -36,7 +36,5 @@ jobs:
         run: brew install dmd
       - name: Install R
         run: brew install r
-      - name: Link R
-        run: brew link r
       - name: Running build
         run: ruby scripts/build.rb
