@@ -35,6 +35,6 @@ jobs:
       - name: Install Erlang
         run: sudo apt-get install erlang
       - name: Install Lua
-        run: sudo apt-get install lua5.4.3
+        run: sudo apt-get install lua5.3
       - name: Running build
         run: ruby scripts/build.rb
