@@ -30,5 +30,7 @@ jobs:
         run: brew install nim
       - name: Install Erlang
         run: brew install erlang
+      - name: Install Lua
+        run: brew install lua
       - name: Running build
         run: ruby scripts/build.rb
