@@ -28,5 +28,7 @@ jobs:
         run: brew install zig
       - name: Install Nim
         run: brew install nim
+      - name: Install Erlang
+        run: brew install erlang
       - name: Running build
         run: ruby scripts/build.rb

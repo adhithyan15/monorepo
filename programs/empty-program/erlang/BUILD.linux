@@ -1,0 +1,2 @@
+erlc program.erl
+erl -noshell -s program
