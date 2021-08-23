@@ -36,5 +36,9 @@ jobs:
         run: brew install dmd
       - name: Install R
         run: brew install r
+      - name: Tap Dart
+        run: brew tap dart-lang/dart
+      - name: Install Dart
+        run: brew install dart
       - name: Running build
         run: ruby scripts/build.rb
