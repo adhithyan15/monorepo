@@ -40,6 +40,5 @@ jobs:
         run: sudo apt update
       - name: Install Erlang
         run: sudo apt-get install erlang
-      - name: Install Erlang
       - name: Running build
         run: ruby scripts/build.rb
