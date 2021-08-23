@@ -34,5 +34,7 @@ jobs:
         run: export PATH=/path/to/usr/bin:"${PATH}"
       - name: Install Erlang
         run: sudo apt-get install erlang
+      - name: Install Lua
+        run: sudo apt-get install lua5.3
       - name: Running build
         run: ruby scripts/build.rb
