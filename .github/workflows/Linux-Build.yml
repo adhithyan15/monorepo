@@ -35,7 +35,7 @@ jobs:
       - name: Add Erlang Repo To Apt-Get
         run: echo "deb https://packages.erlang-solutions.com/ubuntu focal contrib" | sudo tee /etc/apt/sources.list.d/rabbitmq.list
       - name: Update Apt-Get
-        run: sudo apt update
+        run: sudo apt-get update
       - name: Install Erlang
         run: sudo apt-get install erlang
       - name: Running build
