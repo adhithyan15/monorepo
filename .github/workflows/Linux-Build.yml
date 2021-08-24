@@ -66,5 +66,7 @@ jobs:
         run: sudo apt-get install dart
       - name: Export to PATH
         run: export PATH="$PATH:/usr/lib/dart/bin"
+      - name: Install Java
+        run: sudo apt-get install default-jdk
       - name: Running build
         run: ruby scripts/build.rb

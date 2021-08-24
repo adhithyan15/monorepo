@@ -40,5 +40,7 @@ jobs:
         run: brew tap dart-lang/dart
       - name: Install Dart
         run: brew install dart
+      - name: Install Java
+        run: brew install java
       - name: Running build
         run: ruby scripts/build.rb
