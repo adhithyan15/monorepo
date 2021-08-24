@@ -1,1 +1,2 @@
-java Program.java
+javac Program.java
+java Program
