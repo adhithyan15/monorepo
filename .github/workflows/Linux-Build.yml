@@ -68,5 +68,7 @@ jobs:
         run: export PATH="$PATH:/usr/lib/dart/bin"
       - name: Install Java
         run: sudo apt-get install default-jdk
+      - name: Install Kotlin
+        run: sudo snap install --classic kotlin
       - name: Running build
         run: ruby scripts/build.rb
