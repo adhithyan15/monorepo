@@ -14,6 +14,8 @@ jobs:
         uses: actions/checkout@v2
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       - run: npm install -g yarn
+      - name: Update Homebrew
+        run: brew update
       - name: Install GCC along with GNU Fortran
         run: brew install gcc
       - name: Install Perl if it doesn't exit
@@ -42,5 +44,7 @@ jobs:
         run: brew install dart
       - name: Install Java
         run: brew install java
+      - name: Install Kotlin
+        run: brew install kotlin
       - name: Running build
         run: ruby scripts/build.rb
