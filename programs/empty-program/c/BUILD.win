@@ -1,1 +1,1 @@
-vswhere -products * -latest -prerelease -property installationPath
+(vcversall.bat spectre) && (cl program.c) && (./program.exe)
