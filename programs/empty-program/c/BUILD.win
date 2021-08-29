@@ -1,1 +1,3 @@
-(vcversall.bat spectre) && (cl program.c) && (./program.exe)
+vcversall.bat spectre
+cl.exe program.c
+./program.exe
