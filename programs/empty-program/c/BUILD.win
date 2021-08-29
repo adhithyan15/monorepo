@@ -1,0 +1,1 @@
+vswhere -products * -latest -prerelease -property installationPath
