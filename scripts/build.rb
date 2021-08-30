@@ -73,7 +73,7 @@ if RUBY_PLATFORM =~ /w32/
     vs_installation_path = `vswhere -products * -latest -prerelease -property installationPath`
     cl_path = vs_installation_path.chomp
     Dir.chdir(cl_path)
-    puts Dir.pwd
+    puts Dir.entries(".")
     exit(false)
 end
 
