@@ -72,7 +72,8 @@ if RUBY_PLATFORM =~ /w32/
     Dir.chdir(vswhere_path)
     vs_installation_path = `vswhere -products * -latest -prerelease -property installationPath`
     cl_path = vs_installation_path + "\\VC\\Tools\\MSVC"
-    puts Dir.entries(cl_path)
+    Dir.chdir(cl_path)
+    puts Dir.entries(".")
     Dir.chdir(current_directory)
     exit(false)
 end
