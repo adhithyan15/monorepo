@@ -65,16 +65,6 @@ puts "Looking for a WORKSPACE or a build.rb file to start the build"
 workspace_file_found = check_for_workspace_file(Dir.pwd)
 build_file_found = check_for_build_file(Dir.pwd)
 
-if RUBY_PLATFORM =~ /w32/
-    current_directory = Dir.pwd
-    Dir.chdir("C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Enterprise\\VC\\Auxiliary\\Build\\")
-    unless system(".\\vcvarsall.bat x64")
-        puts "Unable to configure vcvarsall"
-        exit(false)
-    end
-    Dir.chdir(current_directory)
-end
-
 if workspace_file_found
     puts "Found a WORKSPACE file. Will attempt to recursively build the directories mentioned in the WORKSPACE file"
     process_workspace_file(Dir.pwd)
