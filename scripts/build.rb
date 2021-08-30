@@ -72,10 +72,10 @@ if RUBY_PLATFORM =~ /w32/
     Dir.chdir(vswhere_path)
     vs_installation_path = `vswhere -products * -latest -prerelease -property installationPath`
     cl_path = vs_installation_path.chomp + "\\VC\\Tools\\MSVC\\14.16.27023\\bin\\Hostx64\\x64"
-    test_value = system("set PATH=%PATH%;#{cl_path}")
-    puts test_value
+    unless system("set PATH=%PATH%;#{cl_path}")
+        puts "Unable to add cl to the path"
+    end
     Dir.chdir(current_directory)
-    exit(false)
 end
 
 if workspace_file_found
