@@ -74,7 +74,7 @@ if RUBY_PLATFORM =~ /w32/
         exit(false);
     end
     vswhere_path = `vswhere -products * -latest -prerelease -property installationPath`
-    `"#{vswhere_path}\\VC\\Auxillary\\Build\\vcvarsall.bat x64 -vcvars_spectre_libs=spectre_mode`
+    `"#{vswhere_path}\\VC\\Auxillary\\Build\\vcvarsall.bat x86_amd64 -vcvars_spectre_libs=spectre`
 end
 
 if workspace_file_found
