@@ -72,8 +72,7 @@ if RUBY_PLATFORM =~ /w32/
     Dir.chdir(vswhere_path)
     vs_installation_path = `vswhere -products * -latest -prerelease -property installationPath`
     cl_path = vs_installation_path.chomp + "\\VC\\Tools\\MSVC\\14.16.27023\\bin\\Hostx64\\x64"
-    `set PATH=%PATH%;cl_path`
-    `cl.exe`
+    `$env:Path`
 end
 
 if workspace_file_found
