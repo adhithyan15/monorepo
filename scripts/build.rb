@@ -75,7 +75,10 @@ if RUBY_PLATFORM =~ /w32/
     end
     vswhere_path = `vswhere -products * -latest -prerelease -property installationPath`
     vswhere_path = vswhere_path.chomp
-    puts vswhere_path
+    unless system("#{vswhere_path}\\VC\\Auxillary\\Build\\vcvarsall.bat x64")
+        puts "Unable to configure vcvarsall"
+        exit(false)
+    end
 end
 
 if workspace_file_found
