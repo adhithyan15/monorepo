@@ -1,3 +1,2 @@
-vcversall.bat spectre
 cl.exe program.c
 ./program.exe
