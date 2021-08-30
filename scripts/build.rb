@@ -65,6 +65,18 @@ puts "Looking for a WORKSPACE or a build.rb file to start the build"
 workspace_file_found = check_for_workspace_file(Dir.pwd)
 build_file_found = check_for_build_file(Dir.pwd)
 
+if RUBY_PLATFORM =~ /w32/
+    current_directory = Dir.pwd
+    program_files_path = ENV["ProgramFiles(x86)"]
+    vswhere_path = "#{PROGRAM_FILES_X86}\\Microsoft Visual Studio\\Installer"
+    Dir.chdir(vswhere_path)
+    vs_installation_path = `vswhere -products * -latest -prerelease -property installationPath`
+    cl_path = vs_installation_path + "\\VC\\Tools\\MSVC"
+    puts Dir.entries(cl_path)
+    Dir.chdir(current_directory)
+    exit(false)
+end
+
 if workspace_file_found
     puts "Found a WORKSPACE file. Will attempt to recursively build the directories mentioned in the WORKSPACE file"
     process_workspace_file(Dir.pwd)
