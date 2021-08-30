@@ -74,11 +74,7 @@ if RUBY_PLATFORM =~ /w32/
         exit(false);
     end
     vswhere_path = `vswhere -products * -latest -prerelease -property installationPath`
-    puts "Running vcvarsall to configure visual studio installation paths"
-    unless system("#{vswhere_path}\\VC\\Auxillary\\Build\\vcvarsall.bat spectre")
-        puts "Unable to configure visual studio installation paths"
-        exit(false)
-    end
+    `"#{vswhere_path}\\VC\\Auxillary\\Build\\vcvarsall.bat spectre`
 end
 
 if workspace_file_found
