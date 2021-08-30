@@ -65,7 +65,7 @@ puts "Looking for a WORKSPACE or a build.rb file to start the build"
 workspace_file_found = check_for_workspace_file(Dir.pwd)
 build_file_found = check_for_build_file(Dir.pwd)
 
-if RUBY_PLATFORM ~= /w32/
+if RUBY_PLATFORM =~ /w32/
     program_files_path = ENV["ProgramFiles(x86)"]
     puts program_files_path
     exit(false)
