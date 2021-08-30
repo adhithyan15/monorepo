@@ -71,10 +71,9 @@ if RUBY_PLATFORM =~ /w32/
     vswhere_path = "#{program_files_path}\\Microsoft Visual Studio\\Installer"
     Dir.chdir(vswhere_path)
     vs_installation_path = `vswhere -products * -latest -prerelease -property installationPath`
-    cl_path = vs_installation_path.chomp + "\\VC\\Tools\\MSVC"
+    cl_path = vs_installation_path.chomp
     Dir.chdir(cl_path)
-    puts Dir.entries(".")
-    Dir.chdir(current_directory)
+    `tree`
     exit(false)
 end
 
