@@ -73,6 +73,8 @@ if RUBY_PLATFORM =~ /w32/
         puts "Unable to add Visual Studio Installer to path"
         exit(false);
     end
+    vs_where_path = `vswhere -products * -latest -prerelease -property installationPath`
+    puts vs_where_path
     exit(false)
 end
 
