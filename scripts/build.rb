@@ -67,7 +67,12 @@ build_file_found = check_for_build_file(Dir.pwd)
 
 if RUBY_PLATFORM =~ /w32/
     program_files_path = ENV["ProgramFiles(x86)"]
-    puts program_files_path
+    visual_studio_path = `#{program_files_path}\\Microsoft Visual Studio\\Installer`
+    puts "Adding Visual Studio installer to the path"
+    unless system("set PATH=%PATH%;#{visual_studio_path}")
+        puts "Unable to add Visual Studio Installer to path"
+        exit(false);
+    end
     exit(false)
 end
 
