@@ -74,7 +74,7 @@ if RUBY_PLATFORM =~ /w32/
         exit(false);
     end
     vswhere_path = `vswhere -products * -latest -prerelease -property installationPath`
-    puts "#{vswhere_path}\\VC\\Auxillary\\Build\\vcvarsall.bat x64"
+    puts "#{vswhere_path.chomp}\\VC\\Auxillary\\Build\\vcvarsall.bat x64"
     unless system("#{vswhere_path}\\VC\\Auxillary\\Build\\vcvarsall.bat x64")
         puts "Unable to configure visual studio using vcvarsall"
         exit(false)
