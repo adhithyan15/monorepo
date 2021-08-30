@@ -7,14 +7,10 @@ def check_for_build_file(directory_path)
 end
 
 if RUBY_PLATFORM =~ /w32/
-    current_directory = Dir.pwd
-    puts current_directory
-    Dir.chdir("C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Enterprise\\VC\\Auxiliary\\Build\\")
     unless system(".\\vcvarsall.bat x64")
         puts "Unable to configure vcvarsall"
         exit(false)
     end
-    Dir.chdir(current_directory)
 end
 
 def process_workspace_file(workspace_directory_path)
