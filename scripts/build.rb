@@ -6,16 +6,6 @@ def check_for_build_file(directory_path)
     return File.exist?(directory_path + "/BUILD") || File.exist?(directory_path + "/BUILD.win") || File.exist?(directory_path + "/BUILD.darwin") || File.exist?(directory_path + "/BUILD.linux")
 end
 
-if RUBY_PLATFORM =~ /w32/
-    current_directory = Dir.pwd
-    Dir.chdir("C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Enterprise\\VC\\Auxiliary\\Build\\")
-    unless system(".\\vcvarsall.bat x64")
-        puts "Unable to configure vcvarsall"
-        exit(false)
-    end
-    Dir.chdir(current_directory)
-end
-
 def process_workspace_file(workspace_directory_path)
     puts "Processing WORKSPACE file in " + workspace_directory_path
     workspace_file_path = workspace_directory_path + "/WORKSPACE"
@@ -77,21 +67,12 @@ build_file_found = check_for_build_file(Dir.pwd)
 
 if RUBY_PLATFORM =~ /w32/
     current_directory = Dir.pwd
-    program_files_path = ENV["ProgramFiles(x86)"]
-    visual_studio_path = "#{program_files_path}\\Microsoft Visual Studio\\Installer"
-    puts "Adding Visual Studio installer to the path"
-    unless system("set PATH=%PATH%;#{visual_studio_path}")
-        puts "Unable to add Visual Studio Installer to path"
-        exit(false);
-    end
-    vswhere_path = `vswhere -products * -latest -prerelease -property installationPath`
-    vswhere_path = vswhere_path.chomp
-    Dir.chdir("#{vswhere_path}\\VC\\Auxillary\\Build\\")
-    `dir`
-    unless system("\\#{vswhere_path}\\VC\\Auxillary\\Build\\vcvarsall.bat x64")
+    Dir.chdir("C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Enterprise\\VC\\Auxiliary\\Build\\")
+    unless system(".\\vcvarsall.bat x64")
         puts "Unable to configure vcvarsall"
         exit(false)
     end
+    Dir.chdir(current_directory)
 end
 
 if workspace_file_found
