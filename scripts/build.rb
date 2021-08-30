@@ -66,6 +66,7 @@ workspace_file_found = check_for_workspace_file(Dir.pwd)
 build_file_found = check_for_build_file(Dir.pwd)
 
 if RUBY_PLATFORM =~ /w32/
+    current_directory = Dir.pwd
     program_files_path = ENV["ProgramFiles(x86)"]
     visual_studio_path = "#{program_files_path}\\Microsoft Visual Studio\\Installer"
     puts "Adding Visual Studio installer to the path"
@@ -75,9 +76,9 @@ if RUBY_PLATFORM =~ /w32/
     end
     vswhere_path = `vswhere -products * -latest -prerelease -property installationPath`
     vswhere_path = vswhere_path.chomp
-    puts vswhere_path
-    puts File.exist?("#{vswhere_path}\\VC\\Auxillary\\Build\\vcvarsall.bat")
-    unless system("#{vswhere_path}\\VC\\Auxillary\\Build\\vcvarsall.bat x64")
+    Dir.chdir("#{vswhere_path}\\VC\\Auxillary\\Build\\")
+    `dir`
+    unless system("\\#{vswhere_path}\\VC\\Auxillary\\Build\\vcvarsall.bat x64")
         puts "Unable to configure vcvarsall"
         exit(false)
     end
