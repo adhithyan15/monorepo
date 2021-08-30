@@ -18,7 +18,5 @@ jobs:
         run: choco install zig
       - name: Install Dart
         run: choco install dart-sdk
-      - name: Install Visual Studio Build Tools
-        run: choco install visualstudio2019buildtools
       - name: Running build
         run: ruby scripts\build.rb
