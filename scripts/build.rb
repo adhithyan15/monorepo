@@ -74,8 +74,8 @@ if RUBY_PLATFORM =~ /w32/
         exit(false);
     end
     vswhere_path = `vswhere -products * -latest -prerelease -property installationPath`
-    puts "#{vswhere_path.chomp}\\VC\\Auxillary\\Build\\vcvarsall.bat x64"
-    system("#{vswhere_path.chomp}\\VC\\Auxillary\\Build\\vcvarsall.bat x64")
+    vswhere_path = vswhere_path.chomp
+    puts vswhere_path
     end
 end
 
