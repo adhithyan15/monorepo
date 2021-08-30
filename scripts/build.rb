@@ -73,9 +73,12 @@ if RUBY_PLATFORM =~ /w32/
         puts "Unable to add Visual Studio Installer to path"
         exit(false);
     end
-    vs_where_path = `vswhere -products * -latest -prerelease -property installationPath`
-    puts vs_where_path
-    exit(false)
+    vswhere_path = `vswhere -products * -latest -prerelease -property installationPath`
+    puts "Running vcvarsall to configure visual studio installation paths"
+    unless system("#{vswhere_path}\\VC\\Auxillary\\Build\\vcvarsall.bat spectre")
+        puts "Unable to configure visual studio installation paths"
+        exit(false)
+    end
 end
 
 if workspace_file_found
