@@ -7,8 +7,9 @@ def check_for_build_file(directory_path)
 end
 
 if RUBY_PLATFORM =~ /w32/
-    puts File.exist?("C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Enterprise\\VC\\Auxiliary\\Build\\vcvarsall.bat")
-    exit(false)
+    unless system(".\\C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Enterprise\\VC\\Auxiliary\\Build\\vcvarsall.bat x64")
+        exit(false)
+    end
 end
 
 def process_workspace_file(workspace_directory_path)
