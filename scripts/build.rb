@@ -74,6 +74,7 @@ if RUBY_PLATFORM =~ /w32/
     cl_path = vs_installation_path.chomp + "\\VC\\Tools\\MSVC\\14.16.27023\\bin\\Hostx64\\x64"
     unless system("set PATH=%PATH%;#{cl_path}")
         puts "Unable to add cl to the path"
+        exit(false)
     end
     Dir.chdir(current_directory)
 end

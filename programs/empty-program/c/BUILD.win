@@ -1,2 +1,2 @@
-.\cl.exe program.c
+cl.exe program.c
 .\program.exe
