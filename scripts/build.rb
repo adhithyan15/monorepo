@@ -74,6 +74,8 @@ if RUBY_PLATFORM =~ /w32/
     cl_path = vs_installation_path.chomp + "\\VC\\Tools\\MSVC\\14.16.27023\\bin\\Hostx64\\x64"
     test_value = system("set PATH=%PATH%;#{cl_path}")
     puts test_value
+    Dir.chdir(current_directory)
+    exit(false)
 end
 
 if workspace_file_found
