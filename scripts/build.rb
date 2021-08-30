@@ -76,7 +76,6 @@ if RUBY_PLATFORM =~ /w32/
     vswhere_path = `vswhere -products * -latest -prerelease -property installationPath`
     vswhere_path = vswhere_path.chomp
     puts vswhere_path
-    end
 end
 
 if workspace_file_found
