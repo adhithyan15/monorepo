@@ -68,7 +68,7 @@ build_file_found = check_for_build_file(Dir.pwd)
 if RUBY_PLATFORM =~ /w32/
     current_directory = Dir.pwd
     program_files_path = ENV["ProgramFiles(x86)"]
-    vswhere_path = "#{PROGRAM_FILES_X86}\\Microsoft Visual Studio\\Installer"
+    vswhere_path = "#{program_files_path}\\Microsoft Visual Studio\\Installer"
     Dir.chdir(vswhere_path)
     vs_installation_path = `vswhere -products * -latest -prerelease -property installationPath`
     cl_path = vs_installation_path + "\\VC\\Tools\\MSVC"
