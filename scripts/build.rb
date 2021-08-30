@@ -6,6 +6,11 @@ def check_for_build_file(directory_path)
     return File.exist?(directory_path + "/BUILD") || File.exist?(directory_path + "/BUILD.win") || File.exist?(directory_path + "/BUILD.darwin") || File.exist?(directory_path + "/BUILD.linux")
 end
 
+if RUBY_PLATFORM =~ /w32/
+    puts File.exist?("C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Enterprise\\VC\\Auxiliary\\Build\\vcvarsall.bat")
+    exit(false)
+end
+
 def process_workspace_file(workspace_directory_path)
     puts "Processing WORKSPACE file in " + workspace_directory_path
     workspace_file_path = workspace_directory_path + "/WORKSPACE"
