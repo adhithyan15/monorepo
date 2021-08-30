@@ -8,6 +8,7 @@ end
 
 if RUBY_PLATFORM =~ /w32/
     current_directory = Dir.pwd
+    puts current_directory
     Dir.chdir("C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Enterprise\\VC\\Auxiliary\\Build\\")
     unless system(".\\vcvarsall.bat x64")
         puts "Unable to configure vcvarsall"
