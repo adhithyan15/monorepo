@@ -78,5 +78,7 @@ jobs:
         run: sudo ./linux-install-1.10.3.943.sh
       - name: Install Leiningen
         run: sudo apt-get install leiningen
+      - name: Install Groovy
+        run: sudo snap install groovy --classic
       - name: Running build
         run: ruby scripts/build.rb
