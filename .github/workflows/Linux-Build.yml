@@ -70,5 +70,13 @@ jobs:
         run: sudo apt-get install default-jdk
       - name: Install Kotlin
         run: sudo snap install --classic kotlin
+      - name: Download Clojure Linux Installer Script
+        run: curl -O https://download.clojure.org/install/linux-install-1.10.3.943.sh
+      - name: Make the installer script runnable
+        run: chmod +x linux-install-1.10.3.943.sh
+      - name: Run the installer script
+        run: sudo ./linux-install-1.10.3.943.sh
+      - name: Install Leiningen
+        run: sudo apt-get install leiningen
       - name: Running build
         run: ruby scripts/build.rb
