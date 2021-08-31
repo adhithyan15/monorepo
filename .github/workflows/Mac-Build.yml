@@ -50,5 +50,7 @@ jobs:
         run: brew install clojure/tools/clojure
       - name: Install Leiningen
         run: brew install leiningen
+      - name: Install Groovy
+        run: brew install groovy
       - name: Running build
         run: ruby scripts/build.rb
