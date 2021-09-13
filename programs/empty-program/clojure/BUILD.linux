@@ -1,2 +1,2 @@
 java -version
-clojure -M program.clj
+clojure program.clj
