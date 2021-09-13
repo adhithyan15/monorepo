@@ -76,5 +76,7 @@ jobs:
         run: sudo apt-get install leiningen
       - name: Install Groovy
         run: sudo snap install groovy --classic
+      - name: Install Crystal
+        run: sudo snap install crystal --classic
       - name: Running build
         run: ruby scripts/build.rb
