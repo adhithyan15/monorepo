@@ -78,5 +78,7 @@ jobs:
         run: sudo snap install groovy --classic
       - name: Install Crystal
         run: sudo snap install crystal --classic
+      - name: Install Cobol
+        run: sudo apt-get install gnucobol
       - name: Running build
         run: ruby scripts/build.rb

@@ -54,5 +54,7 @@ jobs:
         run: brew install groovy
       - name: Install Crystal
         run: brew install crystal
+      - name: Install Cobol
+        run: brew install gnu-cobol
       - name: Running build
         run: ruby scripts/build.rb
