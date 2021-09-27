@@ -80,5 +80,7 @@ jobs:
         run: sudo snap install crystal --classic
       - name: Install Cobol
         run: sudo apt-get install gnucobol
+      - name: Install Scala
+        run: sudo apt-get install scala
       - name: Running build
         run: ruby scripts/build.rb
