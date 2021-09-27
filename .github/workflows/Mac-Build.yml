@@ -56,5 +56,9 @@ jobs:
         run: brew install crystal
       - name: Install Cobol
         run: brew install gnu-cobol
+      - name: Install Scala
+        run: brew install scala
+      - name: Install SBT
+        run: brew install sbt
       - name: Running build
         run: ruby scripts/build.rb
