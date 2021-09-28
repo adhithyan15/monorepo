@@ -80,5 +80,11 @@ jobs:
         run: sudo snap install crystal --classic
       - name: Install Cobol
         run: sudo apt-get install gnucobol
+      - name: Remove default scala package
+        run: sudo apt remove scala-library scala
+      - name: Download latest Scala
+        run: wget https://downloads.lightbend.com/scala/2.13.4/scala-2.13.4.deb
+      - name: Install Scala
+        run: sudo dpkg -i scala-2.13.4.deb
       - name: Running build
         run: ruby scripts/build.rb
