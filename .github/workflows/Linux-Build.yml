@@ -83,9 +83,9 @@ jobs:
       - name: Remove default scala package
         run: sudo apt remove scala-library scala
       - name: Download latest Scala
-        run: wget https://downloads.lightbend.com/scala/3.0.0/scala-3.0.0.deb
+        run: wget https://downloads.lightbend.com/scala/2.13.4/scala-2.13.4.deb
       - name: Install Scala
-        run: sudo dpkg -i scala-3.0.0.deb
+        run: sudo dpkg -i scala-2.13.4.deb
       - name: Install SBT
         run: sudo apt-get install sbt
       - name: Running build
