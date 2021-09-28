@@ -86,7 +86,5 @@ jobs:
         run: wget https://downloads.lightbend.com/scala/2.13.4/scala-2.13.4.deb
       - name: Install Scala
         run: sudo dpkg -i scala-2.13.4.deb
-      - name: Install SBT
-        run: sudo apt-get install sbt
       - name: Running build
         run: ruby scripts/build.rb
