@@ -62,5 +62,7 @@ jobs:
         run: brew install sbt
       - name: Install Elixir
         run: brew install elixir
+      - name: Install Racket
+        run: brew install racket
       - name: Running build
         run: ruby scripts/build.rb
