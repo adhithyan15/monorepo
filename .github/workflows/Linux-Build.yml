@@ -91,5 +91,9 @@ jobs:
         run: sudo dpkg -i scala-2.13.4.deb
       - name: Install Elixir
         run: sudo apt-get install elixir
+      - run: sudo add-apt-repository ppa:plt/racket
+      - run: sudo apt-get update
+      - name: Install Racket
+        run: sudo apt-get install racket
       - name: Running build
         run: ruby scripts/build.rb
