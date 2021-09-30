@@ -95,5 +95,7 @@ jobs:
       - run: sudo apt-get update
       - name: Install Racket
         run: sudo apt-get install racket
+      - name: Install Julia
+        run: sudo apt-get install julia
       - name: Running build
         run: ruby scripts/build.rb
