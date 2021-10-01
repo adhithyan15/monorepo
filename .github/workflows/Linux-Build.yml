@@ -103,5 +103,7 @@ jobs:
       - run: add-apt-repository https://dl.hhvm.com/ubuntu
       - run: sudo apt-get update
       - run: sudo apt-get install hhvm
+      - name: Install Octave
+        run: sudo apt-get install octave
       - name: Running build
         run: ruby scripts/build.rb

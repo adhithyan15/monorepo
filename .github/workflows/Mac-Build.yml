@@ -69,5 +69,7 @@ jobs:
       - run: brew tap hhvm/hhvm
       - name: Install HHVM
         run: brew install hhvm
+      - name: Install Octave
+        run: brew install octave
       - name: Running build
         run: ruby scripts/build.rb
