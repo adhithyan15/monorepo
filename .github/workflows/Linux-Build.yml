@@ -97,5 +97,11 @@ jobs:
         run: sudo apt-get install racket
       - name: Install Julia
         run: sudo apt-get install julia
+      - run: sudo apt-get update
+      - run: apt-get install software-properties-common apt-transport-https
+      - run: apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xB4112585D386EB94
+      - run: add-apt-repository https://dl.hhvm.com/ubuntu
+      - run: sudo apt-get update
+      - run: sudo apt-get install hhvm
       - name: Running build
         run: ruby scripts/build.rb
