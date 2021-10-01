@@ -97,6 +97,12 @@ jobs:
         run: sudo apt-get install racket
       - name: Install Julia
         run: sudo apt-get install julia
+      - run: sudo apt-get update
+      - run: sudo apt-get install software-properties-common apt-transport-https
+      - run: sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xB4112585D386EB94
+      - run: sudo add-apt-repository https://dl.hhvm.com/ubuntu
+      - run: sudo apt-get update
+      - run: sudo apt-get install hhvm
       - name: Install Octave
         run: sudo apt-get install octave
       - name: Running build
