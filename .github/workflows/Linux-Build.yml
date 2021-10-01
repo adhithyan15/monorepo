@@ -97,5 +97,7 @@ jobs:
         run: sudo apt-get install racket
       - name: Install Julia
         run: sudo apt-get install julia
+      - name: Install Octave
+        run: sudo apt-get install octave
       - name: Running build
         run: ruby scripts/build.rb
