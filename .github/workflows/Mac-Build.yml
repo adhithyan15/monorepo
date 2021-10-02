@@ -71,5 +71,9 @@ jobs:
         run: brew install hhvm
       - name: Install Octave
         run: brew install octave
+      - name: Install SBCL
+        run: brew install sbcl
+      - name: Install Common Lisp
+        run: brew install clisp
       - name: Running build
         run: ruby scripts/build.rb
