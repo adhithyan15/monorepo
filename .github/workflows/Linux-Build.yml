@@ -105,5 +105,9 @@ jobs:
       - run: sudo apt-get install hhvm
       - name: Install Octave
         run: sudo apt-get install octave
+      - name: Install Steel Bank Common Lisp
+        run: sudo apt-get install sbcl
+      - name: Install Common Lisp
+        run: sudo apt-get install clisp
       - name: Running build
         run: ruby scripts/build.rb
