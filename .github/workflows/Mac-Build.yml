@@ -75,7 +75,5 @@ jobs:
         run: brew install sbcl
       - name: Install Common Lisp
         run: brew install clisp
-      - name: Install latest dotnet-sdk
-        run: brew install dotnet-sdk
       - name: Running build
         run: ruby scripts/build.rb
