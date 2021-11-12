@@ -109,5 +109,7 @@ jobs:
         run: sudo apt-get install sbcl
       - name: Install Common Lisp
         run: sudo apt-get install clisp
+      - name: Install tcl/tk
+        run: sudo apt-get install tcl
       - name: Running build
         run: ruby scripts/build.rb
