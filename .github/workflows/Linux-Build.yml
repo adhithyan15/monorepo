@@ -111,5 +111,7 @@ jobs:
         run: sudo apt-get install clisp
       - name: Install tcl/tk
         run: sudo apt-get install tcl
+      - name: Install swi-prolog
+        run: snap install swi-prolog
       - name: Running build
         run: ruby scripts/build.rb
