@@ -112,6 +112,6 @@ jobs:
       - name: Install tcl/tk
         run: sudo apt-get install tcl
       - name: Install swi-prolog
-        run: snap install swi-prolog
+        run: sudo snap install swi-prolog
       - name: Running build
         run: ruby scripts/build.rb
