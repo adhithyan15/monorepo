@@ -77,5 +77,7 @@ jobs:
         run: brew install clisp
       - name: Install Prolog
         run: brew install swi-prolog
+      - name: Install TypeScript
+        run: npm install -g typescript
       - name: Running build
         run: ruby scripts/build.rb

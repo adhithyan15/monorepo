@@ -113,5 +113,7 @@ jobs:
         run: sudo apt-get install tcl
       - name: Install swi-prolog
         run: sudo snap install swi-prolog
+      - name: Install TypeScript
+        run: npm install -g typescript
       - name: Running build
         run: ruby scripts/build.rb
