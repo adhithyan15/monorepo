@@ -1,0 +1,3 @@
+class StopWatchNeverStoppedError < StandardError
+
+end
