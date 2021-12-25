@@ -1,22 +1,22 @@
 # frozen_string_literal: true
 
-require_relative "lib/file-format-detector/version"
+require_relative "lib/file-extension-detector/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "file-format-detector"
-  spec.version       = FileFormatDetector::VERSION
+  spec.name          = "file-extension-detector"
+  spec.version       = FileExtensionDetector::VERSION
   spec.authors       = ["Adhithya Rajasekaran"]
   spec.email         = ["adhithyan15@gmail.com"]
 
-  spec.summary       = "A small library that tells you information about which application a file format belongs to"
-  spec.description   = "This gem provides FileFormatDetector class that takes in a file extension and returns information about the file extension like which application created it"
+  spec.summary       = "A small library that tells you information about file extension"
+  spec.description   = "This gem provides FileExtensionDetector class that takes in a file extension and returns information about the file extension like which application created it"
   spec.homepage      = "https://github.com/adhithyan15/monorepo/tree/main/languages/ruby/file-format-detector"
   spec.license       = "MIT"
   spec.required_ruby_version = ">= 2.4.0"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/adhithyan15/monorepo/tree/main/languages/ruby/file-format-detector"
-  spec.metadata["changelog_uri"] = "https://github.com/adhithyan15/monorepo/tree/main/languages/ruby/file-format-detector"
+  spec.metadata["source_code_uri"] = "https://github.com/adhithyan15/monorepo/tree/main/languages/ruby/file-extension-detector"
+  spec.metadata["changelog_uri"] = "https://github.com/adhithyan15/monorepo/tree/main/languages/ruby/file-extension-detector"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
