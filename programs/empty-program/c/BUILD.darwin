@@ -1,4 +1,0 @@
-gcc-11 program.c -o program
-./program
-clang program.c -o program
-./program

@@ -1,0 +1,1 @@
+clang program.c -o program
