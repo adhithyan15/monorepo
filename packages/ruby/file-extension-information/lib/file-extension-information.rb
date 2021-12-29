@@ -3,6 +3,6 @@ require_relative "../../shared-code/file-extension-information/get_file_extensio
 
 module FileExtensionInformation
     def self.get_file_extension_information(file_extension)
-        return get_file_extension_information_internal(file_extension)
+        return retrieve_file_extension_information(file_extension)
     end
 end
