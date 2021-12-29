@@ -22,5 +22,7 @@ jobs:
         run: npm install -g typescript
       - name: Install Julia
         run: choco install julia
+      - name: Install LLVM
+        run: choco install llvm
       - name: Running build
         run: ruby scripts\build.rb
