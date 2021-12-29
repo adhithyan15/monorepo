@@ -20,5 +20,7 @@ jobs:
         run: choco install dart-sdk
       - name: Install TypeScript
         run: npm install -g typescript
+      - name: Install Julia
+        run: choco install julia
       - name: Running build
         run: ruby scripts\build.rb
