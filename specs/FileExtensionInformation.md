@@ -1,9 +1,9 @@
 # File Extension Information
 
-File Extension Information package will provide the users of the package information about different file extensions. 
+This document is designed to be used by the implementers of the file extension information packages for different languages. 
 
-Here is the list of file extension that the package knows about
+Any valid implementation of this package should be able to detect the following file extension and return the application and the category to which the file extension belongs to.
 
-| File Extension      | Category |
-| ----------- | ----------- |
-| rb      | Source code       |
+| File Extension      | Application | Category |
+| ----------- | ----------- | ----------- |
+| rb | Ruby | Source code |
