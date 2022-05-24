@@ -116,4 +116,4 @@ jobs:
       - name: Install TypeScript
         run: npm install -g typescript
       - name: Running build
-        run: ruby scripts/build.rb
+        run: ruby code/scripts/build.rb
