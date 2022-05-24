@@ -23,4 +23,4 @@ jobs:
       - name: Install Julia
         run: choco install julia
       - name: Running build
-        run: ruby scripts\build.rb
+        run: ruby code/scripts\build.rb
